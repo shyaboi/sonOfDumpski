@@ -5,7 +5,7 @@ const exec = require("child_process").exec;
 var ultaBuff = parseInt(fs.readFileSync('universalCounter.txt'))
 
 
-fs.readFile('comfyDump.txt', 'utf8', (err, data) => {
+fs.readFile('classyDump.txt', 'utf8', (err, data) => {
     if (err) throw err;
     // console.log(data);
   var dinus = data.split(",")
@@ -36,3 +36,11 @@ fs.readFile('comfyDump.txt', 'utf8', (err, data) => {
     }
     
   });
+
+
+  exec(`py movin.py`, (err, stdout, stderr) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    console.log(stdout);})
