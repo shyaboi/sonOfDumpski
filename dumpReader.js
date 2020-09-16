@@ -39,9 +39,9 @@ fs.readFile('classyDump.txt', 'utf8', (err, data) => {
       // }, 5000);
       });
     }
+    console.log("dump donezo")
   });
 
-  console.log("dump donezo")
 
   // setTimeout(() => {
 

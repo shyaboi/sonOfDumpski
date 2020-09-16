@@ -5,7 +5,7 @@ const exec = require("child_process").exec;
 
 // for (let page = 2; page < 10; page++) {
 
-const vgmUrl = `https://boards.4chan.org/wg/thread/7645096#q7645096`;
+const vgmUrl = `https://boards.4chan.org/wg/thread/7651664`;
 
 (async () => {
   const browser = await puppeteer.launch();
@@ -45,7 +45,7 @@ const vgmUrl = `https://boards.4chan.org/wg/thread/7645096#q7645096`;
     
     // mToHtml = `<img class="lazy" src='${element}' width="450" height="500" />`
     // lanks = `<a class="lazy" href='${element}'> Lankssssss</a>`
-    fs.appendFile("walls.txt", links, ()=> {console.log("link barf wrote")})
+    fs.writeFile("classyDump.txt", links, ()=> {console.log("link barf wrote")})
 
 // }
   await browser.close();
@@ -53,7 +53,7 @@ const vgmUrl = `https://boards.4chan.org/wg/thread/7645096#q7645096`;
 
 // }
 
-
+1
 
 setTimeout(() => {
   exec(`start pythonV.bat`, (err, stdout, stderr) => {

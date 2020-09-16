@@ -4,7 +4,7 @@ import time
 import subprocess
 
 
-time.sleep(5)
+time.sleep(2)
 print('pythoiing starterdd')
 process_name = 'curl.exe'
 
@@ -27,6 +27,7 @@ def checker():
         checker()
     if check == False:
             print('waves crashed')
+            
             pass
 
 checker()
@@ -44,6 +45,10 @@ dumpDir = os.listdir(path)
 newDir = drte+'wallsDump'
 os.mkdir(newDir)
 
+def killNewDir():
+    time.sleep(30)
+    shutil.rmtree(newDir)
+
 
 for filename in os.listdir(path):
     if filename.endswith(".png"): 
@@ -52,3 +57,11 @@ for filename in os.listdir(path):
         dumpFiles = os.path.join(path, filename)
         #  cwd = path + os.path.join(filename)
         shutil.move(dumpFiles, newDir)
+for filename in os.listdir(path):
+    if filename.endswith(".png")==False: 
+                             killNewDir()
+    
+
+
+
+ 
