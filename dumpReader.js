@@ -2,6 +2,11 @@ const fs = require('fs');
 const { CLIENT_RENEG_LIMIT } = require('tls');
 const path = require("path")
 const exec = require("child_process").exec;
+const Shell = require("node-powershell");
+const userOS = process.platform;
+
+
+
 var ultaBuff = parseInt(fs.readFileSync('universalCounter.txt'))
 
 
@@ -18,13 +23,13 @@ fs.readFile('classyDump.txt', 'utf8', (err, data) => {
     ultaBuff++ 
     fs.writeFile('universalCounter.txt', ultaBuff, ()=> {console.log('double dang!')})
         // setTimeout(() => {
-          exec(`cd dinus/`, (err, stdout, stderr) => {
-            if (err) {
-              console.error(err);
-              return;
-            }
-          });
-      exec(`curl ${element} -o ${ultaBuff}.jpg`, (err, stdout, stderr) => {
+          // exec(`cd dinus/`, (err, stdout, stderr) => {
+          //   if (err) {
+          //     console.error(err);
+          //     return;
+          //   }
+          // });
+      exec(`curl ${element} -o ${ultaBuff}.png`, (err, stdout, stderr) => {
         if (err) {
           console.error(err);
           return;
@@ -34,13 +39,25 @@ fs.readFile('classyDump.txt', 'utf8', (err, data) => {
       // }, 5000);
       });
     }
-    
   });
 
+  console.log("dump donezo")
 
-  exec(`py movin.py`, (err, stdout, stderr) => {
-    if (err) {
-      console.error(err);
-      return;
-    }
-    console.log(stdout);})
+  // setTimeout(() => {
+
+  // exec(`py movin.py`, (err, stdout, stderr) => {
+  //   if (err) {
+  //     console.error(err);
+  //     return;
+  //   }
+  //   console.log(stdout);})
+
+  // if (userOS === "win32") {
+    // const ps = new Shell({
+    //   executionPolicy: "Bypass",
+    //   noProfile: true,
+    // });
+  // ps.addCommand('./pythonV.bat')
+    
+      // console.log(stdout);})}
+// }, 5000)

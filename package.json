@@ -1,5 +1,5 @@
 {
-  "name": "dumpskis",
+  "name": "sonofdumpski",
   "version": "1.0.0",
   "main": "dumpReader.js",
   "scripts": {
@@ -9,5 +9,9 @@
   "author": "Shyaboi",
   "license": "ISC",
   "keywords": [],
-  "description": "A node program to analyze the link dumps of Scrap Dumpski P.I., curl/download all the links, then a python script to move the files to a another dir."
+  "description": "A node program to analyze the link dumps of Scrap Dumpski P.I., curl/download all the links, then a python script to move the files to a another dir.",
+  "dependencies": {
+    "node-powershell": "^4.0.0",
+    "puppeteer": "^5.3.0"
+  }
 }

@@ -1,0 +1,3 @@
+node dumpReader.js
+
+Exit
