@@ -45,23 +45,19 @@ dumpDir = os.listdir(path)
 newDir = drte+'wallsDump'
 os.mkdir(newDir)
 
-def killNewDir():
-    time.sleep(30)
-    shutil.rmtree(newDir)
+# def killNewDir():
+#     time.sleep(60)
+#     shutil.rmtree(newDir)
 
 
 for filename in os.listdir(path):
-    if filename.endswith(".png"): 
+    if filename.endswith(".svg"): 
         newPath = path+newDir
         print(newPath, newDir)
         dumpFiles = os.path.join(path, filename)
         #  cwd = path + os.path.join(filename)
         shutil.move(dumpFiles, newDir)
-for filename in os.listdir(path):
-    if filename.endswith(".png")==False: 
-                             killNewDir()
-    
-
-
-
- 
+# for filename in os.listdir(path):
+#     if filename.endswith(".svg")==False: 
+#                              killNewDir()
+#                              print('donzo')

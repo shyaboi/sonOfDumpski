@@ -29,7 +29,7 @@ fs.readFile('classyDump.txt', 'utf8', (err, data) => {
           //     return;
           //   }
           // });
-      exec(`curl ${element} -o ${ultaBuff}.png`, (err, stdout, stderr) => {
+      exec(`curl ${element} -o ${ultaBuff}.svg`, (err, stdout, stderr) => {
         if (err) {
           console.error(err);
           return;

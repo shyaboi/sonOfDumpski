@@ -5,29 +5,29 @@ const exec = require("child_process").exec;
 
 // for (let page = 2; page < 10; page++) {
 
-const vgmUrl = `https://boards.4chan.org/wg/thread/7651664`;
+const vgmUrl = `https://en.wikipedia.org/wiki/List_of_Indian_flags`;
 
-(async () => {
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
+// (async () => {
+//   const browser = await puppeteer.launch();
+//   const page = await browser.newPage();
 
-  await page.goto(vgmUrl);
+//   await page.goto(vgmUrl);
 
-  const links = await page.$$eval('a', elements => elements.filter(element => {
-    const parensRegex = /^((?!\().)*$/;
-    return element.href.includes('.jpg') && parensRegex.test(element.textContent);
-  }).map(element => element.href));
+//   const links = await page.$$eval('a', elements => elements.filter(element => {
+//     const parensRegex = /^((?!\().)*$/;
+//     return element.href.includes('.svg') && parensRegex.test(element.textContent);
+//   }).map(element => element.href));
 
-// for (let i = 0; i < links.length; i++) {
-//     const element = links[i];
+// // for (let i = 0; i < links.length; i++) {
+// //     const element = links[i];
     
-    // mToHtml = `<img class="lazy" src='${element}' width="450" height="500" />`
-    // lanks = `<a class="lazy" href='${element}'> Lankssssss</a>`
-    fs.writeFile("classyDump.txt", links, ()=> {console.log("link barf wrote")})
+//     // mToHtml = `<img class="lazy" src='${element}' width="450" height="500" />`
+//     // lanks = `<a class="lazy" href='${element}'> Lankssssss</a>`
+//     fs.writeFile("classyDump.txt", links, ()=> {console.log("link barf wrote")})
 
-// }
-  await browser.close();
-})();
+// // }
+//   await browser.close();
+// })();
 
 (async () => {
   const browser = await puppeteer.launch();
@@ -37,7 +37,7 @@ const vgmUrl = `https://boards.4chan.org/wg/thread/7651664`;
 
   const links = await page.$$eval('a', elements => elements.filter(element => {
     const parensRegex = /^((?!\().)*$/;
-    return element.href.includes('.png') && parensRegex.test(element.textContent);
+    return element.href.includes('.svg') && parensRegex.test(element.textContent);
   }).map(element => element.href));
 
 // for (let i = 0; i < links.length; i++) {
@@ -66,7 +66,7 @@ setTimeout(() => {
     
 })
   
-}, 15000);
+}, 25000);
 
 setTimeout(() => {
   exec(`start scrapeToDump.bat`, (err, stdout, stderr) => {
@@ -79,4 +79,4 @@ setTimeout(() => {
     
 })
   
-}, 15000);
+}, 25000);
