@@ -51,13 +51,13 @@ os.mkdir(newDir)
 
 
 for filename in os.listdir(path):
-    if filename.endswith(".svg"): 
+    if filename.endswith(".jpg"): 
         newPath = path+newDir
         print(newPath, newDir)
         dumpFiles = os.path.join(path, filename)
         #  cwd = path + os.path.join(filename)
         shutil.move(dumpFiles, newDir)
 # for filename in os.listdir(path):
-#     if filename.endswith(".svg")==False: 
+#     if filename.endswith(".jpg")==False: 
 #                              killNewDir()
 #                              print('donzo')
